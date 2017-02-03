@@ -52,9 +52,9 @@ public class AccountImpl implements Account {
 	   } // end method withdraw
 	   
 	// Method to get Account Information
-		public String getAccountInfo()
+		public Object getAccountInfo()
 		{
-			String accountInfo = String.format("Account Number: %.2f%n Balance: $%.2f%n", accountNumber, balance);
+			String accountInfo = String.format("Account Number: %d%n Balance: $%.2f%n", accountNumber, balance);
 			return accountInfo;
 		}
 

@@ -18,10 +18,10 @@ public class ATMClient {
 
     try {
       System.out.println("socket = " + socket);
-      BufferedReader in =
+     /* BufferedReader in =
         new BufferedReader(
           new InputStreamReader(
-            socket.getInputStream()));
+            socket.getInputStream()));*/
       
       AccountImpl myAccount = new AccountImpl(12345, 1000.00);
       
@@ -66,7 +66,7 @@ public class ATMClient {
 	    else if (entry == 4)
 	    {
 	    	JOptionPane.showMessageDialog(null, "GoodBye");
-	    	System.exit(0);
+	    	//System.exit(0);
 	    }
       }
 	 
@@ -83,8 +83,8 @@ public class ATMClient {
         out.println("LAB COMPUTER OP!!!! " + i);
         String str = in.readLine();
         System.out.println(str);
-      }
-      out.println("END");*/
+      }*/
+      System.out.println("END");
     } finally {
       System.out.println("closing...");
       socket.close();
