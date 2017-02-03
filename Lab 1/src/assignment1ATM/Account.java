@@ -1,7 +1,7 @@
 package assignment1ATM;
 
 interface Account {
-	void deposit (double balance);
-	void withdraw(double balance);
+	void deposit (double depositAmount);
+	void withdraw(double withdrawAmount);
 }
 
