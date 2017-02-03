@@ -18,10 +18,10 @@ public class ATMClient {
 
     try {
       System.out.println("socket = " + socket);
-     /* BufferedReader in =
+      BufferedReader in =
         new BufferedReader(
           new InputStreamReader(
-            socket.getInputStream()));*/
+            socket.getInputStream()));
       
       AccountImpl myAccount = new AccountImpl(12345, 1000.00);
       
@@ -66,25 +66,17 @@ public class ATMClient {
 	    else if (entry == 4)
 	    {
 	    	JOptionPane.showMessageDialog(null, "GoodBye");
+	    	PrintWriter out =
+	        new PrintWriter(
+	          new BufferedWriter(
+	            new OutputStreamWriter(
+	              socket.getOutputStream())),true);
+	    	out.println("END");
+	    	String str = in.readLine();
+	        System.out.println(str);
 	    	//System.exit(0);
 	    }
       }
-	 
-
-      // Output is automatically flushed
-      // by PrintWriter:
-
-      /*PrintWriter out =
-        new PrintWriter(
-          new BufferedWriter(
-            new OutputStreamWriter(
-              socket.getOutputStream())),true);
-      for(int i = 0; i < 10; i ++) {
-        out.println("LAB COMPUTER OP!!!! " + i);
-        String str = in.readLine();
-        System.out.println(str);
-      }*/
-      System.out.println("END");
     } finally {
       System.out.println("closing...");
       socket.close();
